@@ -1,5 +1,11 @@
-function TodoListItem({ user, todo, deleteTodo }) {
-    const mine = todo.user === user.id
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
+
+function TodoListItem({ todo, deleteTodo }) {
+    const contextObject = useContext(UserContext);
+    const user = contextObject.user;
+
+    const mine = todo.user === user.id;
     return(
         <li className={mine ? "my-todo" : ""}>
             {todo.done ? "✓ " : "○ "}

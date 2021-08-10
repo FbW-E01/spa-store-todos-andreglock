@@ -19,9 +19,9 @@ function App() {
         {user && <>
           <p>Welcome, {user.name} <a href="#" onClick={() => { setUser(null) }}>Log out</a></p>
           <hr/>
-          <TodoList user={user} />
+          <TodoList />
         </>}
-        {!user && <Login setUser={setUser} />}
+        {!user && <Login />}
       </div>
     </UserContext.Provider>
   );
